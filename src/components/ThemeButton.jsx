@@ -10,15 +10,11 @@ function ThemeButton() {
         setTheme(savedTheme ?? (prefersDark ? "dark" : "light"));
     }, []);
     useEffect(() => {
+        localStorage.setItem("theme", theme);
         document.documentElement.classList.toggle("dark", theme === "dark");
     }, [theme]);
     function toggleTheme() {
-        setTheme((prev) => {
-            const next = prev === "light" ? "dark" : "light";
-            localStorage.setItem("theme", next);
-            document.documentElement.classList.toggle("dark", next === "dark");
-            return next;
-        });
+        setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
     }
     return (
         <button
