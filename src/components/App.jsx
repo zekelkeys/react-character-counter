@@ -13,6 +13,9 @@ function App() {
         ).matches;
         setTheme(savedTheme ?? (prefersDark ? "dark" : "light"));
     }, []);
+    useEffect(() => {
+        document.documentElement.classList.toggle("dark", theme === "dark");
+    }, [theme]);
     function toggleTheme() {
         if (theme === "light") {
             setTheme("dark");
