@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../index.css";
 import Logo from "./Logo";
 import ThemeButton from "./ThemeButton";
@@ -6,8 +6,21 @@ import Wrapper from "./Wrapper";
 
 function App() {
     const [theme, setTheme] = useState("light");
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+        ).matches;
+        setTheme(savedTheme ?? (prefersDark ? "dark" : "light"));
+    }, []);
     function toggleTheme() {
-        theme === "light" ? setTheme("dark") : setTheme("light");
+        if (theme === "light") {
+            setTheme("dark");
+            localStorage.setItem("theme", "dark");
+        } else {
+            setTheme("light");
+            localStorage.setItem("theme", "light");
+        }
     }
     return (
         <Wrapper theme={theme}>
