@@ -11,6 +11,11 @@ function App() {
                     <Logo />
                     <ThemeButton />
                 </header>
+                <main>
+                    <h1 className="py-10 lg:py-12">
+                        Analyze your text in real-time.
+                    </h1>
+                </main>
             </div>
         </Wrapper>
     );
