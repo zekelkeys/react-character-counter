@@ -1,6 +1,6 @@
 function Checkboxes() {
     return (
-        <div>
+        <div className="mt-4 mb-10 lg:mb-12">
             <label class="checkbox">
                 <input
                     id="excludeSpaces"
