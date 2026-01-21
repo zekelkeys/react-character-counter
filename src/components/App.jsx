@@ -3,6 +3,7 @@ import Logo from "./Logo";
 import ThemeButton from "./ThemeButton";
 import Wrapper from "./Wrapper";
 import TextArea from "./TextArea";
+import Checkboxes from "./Checkboxes";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                         Analyze your text in real-time.
                     </h1>
                     <TextArea />
+                    <Checkboxes />
                 </main>
             </div>
         </Wrapper>
