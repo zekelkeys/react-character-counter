@@ -14,7 +14,7 @@ function App() {
                     <ThemeButton />
                 </header>
                 <main>
-                    <h1 className="mx-auto my-10 max-w-[530px] text-center font-dm-sans text-2xl leading-none font-bold tracking-tighter text-neutral-900 md:text-3xl lg:my-12 dark:text-neutral-100">
+                    <h1 className="mx-auto my-10 max-w-[530px] text-center text-2xl leading-none font-bold tracking-tighter text-neutral-900 md:text-3xl lg:my-12 dark:text-neutral-100">
                         Analyze your text in real-time.
                     </h1>
                     <TextArea />
