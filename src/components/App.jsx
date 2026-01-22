@@ -4,6 +4,7 @@ import ThemeButton from "./ThemeButton";
 import Wrapper from "./Wrapper";
 import TextArea from "./TextArea";
 import Checkboxes from "./Checkboxes";
+import TextStats from "./TextStats";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     </h1>
                     <TextArea />
                     <Checkboxes />
+                    <TextStats />
                 </main>
             </div>
         </Wrapper>
