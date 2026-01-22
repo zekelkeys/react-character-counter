@@ -38,7 +38,7 @@ function Checkboxes() {
                 </div>
             </div>
 
-            <div className="text-base leading-tight tracking-tight md:ml-auto">
+            <div className="flex items-center text-base leading-tight tracking-tight md:ml-auto">
                 Approx. reading time:{" "}
                 <output className="trackiing-tiight text-base leading-tight">
                     0 minutes
