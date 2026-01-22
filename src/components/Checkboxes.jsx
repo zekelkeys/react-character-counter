@@ -40,7 +40,7 @@ function Checkboxes() {
 
                     {characterLimit && (
                         <input
-                            className="ml-2.5 h-[1.813rem] w-[3.438rem] [appearance:textfield] rounded-sm border-1 border-neutral-600 px-3 py-1 text-base leading-tight tracking-tight text-neutral-900 dark:text-white [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                            className="ml-2.5 h-[1.813rem] w-[3.438rem] [appearance:textfield] rounded-sm border-1 border-neutral-600 px-3 py-1 text-base leading-tight tracking-tight text-neutral-900 focus-visible:border-purple-500 focus-visible:shadow-[0_0_0.625rem_#C27CF8] focus-visible:ring-1 focus-visible:ring-purple-500 focus-visible:outline-none dark:text-white [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                             id="character-limit"
                             type="number"
                         />
