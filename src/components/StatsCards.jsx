@@ -1,0 +1,31 @@
+import StatCard from "./StatsCard";
+
+function StatCards() {
+    return (
+        <div className="flex flex-col gap-4 md:flex-row">
+            <StatCard
+                value={"278"}
+                label="Total Characters"
+                bgColor="bg-purple-400"
+                bgIcon="bg-[url('./assets/images/pattern-character-count.svg')]"
+                extraText={false}
+            />
+
+            <StatCard
+                value={"39"}
+                label="Word Count"
+                bgColor="bg-yellow-500"
+                bgIcon="bg-[url('./assets/images/pattern-word-count.svg')]"
+            />
+
+            <StatCard
+                value={"04"}
+                label="Sentence Count"
+                bgColor="bg-orange-500"
+                bgIcon="bg-[url('./assets/images/pattern-sentence-count.svg')]"
+            />
+        </div>
+    );
+}
+
+export default StatCards;
