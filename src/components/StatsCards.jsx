@@ -1,10 +1,10 @@
 import StatCard from "./StatsCard";
 
-function StatCards() {
+function StatCards({ characterCount }) {
     return (
         <div className="flex flex-col gap-4 md:flex-row">
             <StatCard
-                value={"278"}
+                value={characterCount}
                 label="Total Characters"
                 bgColor="bg-purple-400"
                 bgIcon="bg-[url('./assets/images/pattern-character-count.svg')]"

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import "../index.css";
 import Logo from "./Logo";
 import ThemeButton from "./ThemeButton";
@@ -7,6 +9,12 @@ import Checkboxes from "./Checkboxes";
 import StatsCards from "./StatsCards";
 
 function App() {
+    const [text, setText] = useState("00");
+
+    function setCharacterCount(area) {
+        setText(area.length === 0 ? "00" : area.length);
+    }
+
     return (
         <Wrapper>
             <div className="m-auto max-w-[61.875rem]">
@@ -18,9 +26,9 @@ function App() {
                     <h1 className="mx-auto my-10 max-w-[530px] text-center text-2xl leading-none font-bold tracking-tighter text-neutral-900 md:text-3xl lg:my-12 dark:text-neutral-100">
                         Analyze your text in real-time.
                     </h1>
-                    <TextArea />
+                    <TextArea setCharacterCount={setCharacterCount} />
                     <Checkboxes />
-                    <StatsCards />
+                    <StatsCards characterCount={text} />
                 </main>
             </div>
         </Wrapper>
