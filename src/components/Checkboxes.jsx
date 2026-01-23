@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { TextStatsContext } from "../context/TextStatsContext";
 
-function Checkboxes({ countSpaces, setCountSpaces }) {
+function Checkboxes() {
     const [characterLimit, setCharacterLimit] = useState(false);
+    const { countSpaces, setCountSpaces } = useContext(TextStatsContext);
     return (
         <div className="mt-4 mb-10 flex flex-col gap-3 text-neutral-900 md:flex-row md:gap-6 lg:mb-12 dark:text-neutral-200">
             <label className="group flex cursor-pointer items-center gap-2.5">

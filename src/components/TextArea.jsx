@@ -1,4 +1,8 @@
-function TextArea({ setCharacterCount }) {
+import { useContext } from "react";
+import { TextStatsContext } from "../context/TextStatsContext";
+
+function TextArea() {
+    const { getCharacterCount } = useContext(TextStatsContext);
     return (
         <div>
             <label className="sr-only" htmlFor="text-input">
@@ -9,7 +13,7 @@ function TextArea({ setCharacterCount }) {
                 id="text-input"
                 placeholder="Start typing here… (or paste your text)"
                 onChange={(event) => {
-                    setCharacterCount(event.target.value);
+                    getCharacterCount(event.target.value);
                 }}
             ></textarea>
         </div>
