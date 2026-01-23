@@ -1,6 +1,6 @@
 import StatCard from "./StatsCard";
 
-function StatCards({ characterCount }) {
+function StatCards({ characterCount, countSpaces }) {
     return (
         <div className="flex flex-col gap-4 md:flex-row">
             <StatCard
@@ -8,7 +8,7 @@ function StatCards({ characterCount }) {
                 label="Total Characters"
                 bgColor="bg-purple-400"
                 bgIcon="bg-[url('./assets/images/pattern-character-count.svg')]"
-                extraText={false}
+                extraText={countSpaces}
             />
 
             <StatCard

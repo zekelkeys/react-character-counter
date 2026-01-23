@@ -9,7 +9,10 @@ function StatCard({ value, label, bgColor, bgIcon, extraText }) {
             <span className="text-lg leading-snug tracking-tight text-neutral-900">
                 {label}
                 {extraText && (
-                    <span className="text-base leading-tight tracking-tight">
+                    <span
+                        className="text-base leading-tight tracking-tight"
+                        id="space-count"
+                    >
                         {" (no space)"}
                     </span>
                 )}

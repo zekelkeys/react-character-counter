@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import "../index.css";
 import Logo from "./Logo";
 import ThemeButton from "./ThemeButton";
@@ -10,6 +9,8 @@ import StatsCards from "./StatsCards";
 
 function App() {
     const [text, setText] = useState("00");
+
+    const [countSpaces, setCountSpaces] = useState(false);
 
     function setCharacterCount(area) {
         setText(area.length === 0 ? "00" : area.length);
@@ -27,8 +28,14 @@ function App() {
                         Analyze your text in real-time.
                     </h1>
                     <TextArea setCharacterCount={setCharacterCount} />
-                    <Checkboxes />
-                    <StatsCards characterCount={text} />
+                    <Checkboxes
+                        countSpaces={countSpaces}
+                        setCountSpaces={setCountSpaces}
+                    />
+                    <StatsCards
+                        characterCount={text}
+                        countSpaces={countSpaces}
+                    />
                 </main>
             </div>
         </Wrapper>
