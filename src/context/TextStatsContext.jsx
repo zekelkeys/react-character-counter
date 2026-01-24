@@ -28,11 +28,3 @@ function TextStatsContextProvider({ children }) {
 }
 
 export default TextStatsContextProvider;
-
-// function removeWhitespace(str) {
-//     return str.replace(/\s+/g, "");
-// }
-// function getCharacterCount() {
-//     console.log(text);
-//     setCharacterCount(text.length === 0 ? "00" : text.length);
-// }
