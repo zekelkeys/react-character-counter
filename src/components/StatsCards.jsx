@@ -3,7 +3,15 @@ import { TextStatsContext } from "../context/TextStatsContext";
 import StatCard from "./StatsCard";
 
 function StatCards() {
-    const { characterCount, excludeSpaces } = useContext(TextStatsContext);
+    const { text, excludeSpaces } = useContext(TextStatsContext);
+
+    const characterCount = excludeSpaces
+        ? text.replace(/\s+/g, "").length
+        : text.length;
+
+    const wordCount =
+        text.trim() === "" ? "00" : text.trim().split(/\s+/).length;
+
     return (
         <div className="flex flex-col gap-4 md:flex-row">
             <StatCard
@@ -15,7 +23,7 @@ function StatCards() {
             />
 
             <StatCard
-                value={"39"}
+                value={wordCount}
                 label="Word Count"
                 bgColor="bg-yellow-500"
                 bgIcon="bg-[url('./assets/images/pattern-word-count.svg')]"

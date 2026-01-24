@@ -6,10 +6,6 @@ function TextStatsContextProvider({ children }) {
     const [text, setText] = useState("");
     const [excludeSpaces, setExcludeSpaces] = useState(false);
 
-    const characterCount = excludeSpaces
-        ? text.replace(/\s+/g, "").length
-        : text.length;
-
     return (
         <TextStatsContext.Provider
             value={{
@@ -18,8 +14,6 @@ function TextStatsContextProvider({ children }) {
 
                 excludeSpaces,
                 setExcludeSpaces,
-
-                characterCount,
             }}
         >
             {children}
