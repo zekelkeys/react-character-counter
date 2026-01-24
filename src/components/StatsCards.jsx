@@ -3,15 +3,15 @@ import { TextStatsContext } from "../context/TextStatsContext";
 import StatCard from "./StatsCard";
 
 function StatCards() {
-    const { characterCount, countSpaces } = useContext(TextStatsContext);
+    const { characterCount, excludeSpaces } = useContext(TextStatsContext);
     return (
         <div className="flex flex-col gap-4 md:flex-row">
             <StatCard
-                value={characterCount}
+                value={characterCount === 0 ? "00" : characterCount}
                 label="Total Characters"
                 bgColor="bg-purple-400"
                 bgIcon="bg-[url('./assets/images/pattern-character-count.svg')]"
-                extraText={countSpaces}
+                extraText={excludeSpaces}
             />
 
             <StatCard

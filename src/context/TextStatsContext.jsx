@@ -3,23 +3,23 @@ import { createContext, useState } from "react";
 export const TextStatsContext = createContext(null);
 
 function TextStatsContextProvider({ children }) {
-    const [characterCount, setCharacterCount] = useState("00");
+    const [text, setText] = useState("");
+    const [excludeSpaces, setExcludeSpaces] = useState(false);
 
-    const [countSpaces, setCountSpaces] = useState(false);
+    const characterCount = excludeSpaces
+        ? text.replace(/\s+/g, "").length
+        : text.length;
 
-    function getCharacterCount(textAreaText) {
-        setCharacterCount(
-            textAreaText.length === 0 ? "00" : textAreaText.length,
-        );
-    }
     return (
         <TextStatsContext.Provider
             value={{
+                text,
+                setText,
+
+                excludeSpaces,
+                setExcludeSpaces,
+
                 characterCount,
-                setCharacterCount,
-                countSpaces,
-                setCountSpaces,
-                getCharacterCount,
             }}
         >
             {children}
@@ -28,3 +28,11 @@ function TextStatsContextProvider({ children }) {
 }
 
 export default TextStatsContextProvider;
+
+// function removeWhitespace(str) {
+//     return str.replace(/\s+/g, "");
+// }
+// function getCharacterCount() {
+//     console.log(text);
+//     setCharacterCount(text.length === 0 ? "00" : text.length);
+// }
