@@ -29,6 +29,11 @@ function App() {
                         </div>
                         <StatsCards />
                     </TextStatsContextProvider>
+                    <section>
+                        <h2 className="text-xl leading-tight font-semibold tracking-tighter">
+                            Letter Density
+                        </h2>
+                    </section>
                 </main>
             </div>
         </div>
