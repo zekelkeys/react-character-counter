@@ -30,7 +30,7 @@ function App() {
                         <StatsCards />
                     </TextStatsContextProvider>
                     <section className="mt-6 mb-5">
-                        <h2 className="text-xl leading-tight font-semibold tracking-tighter">
+                        <h2 className="text-xl leading-tight font-semibold tracking-tighter text-neutral-900 dark:text-neutral-200">
                             Letter Density
                         </h2>
                     </section>
