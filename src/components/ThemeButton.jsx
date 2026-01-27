@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 
 function ThemeButton() {
-    const [theme, setTheme] = useState("light");
-    useEffect(() => {
+    const [theme, setTheme] = useState(() => {
         const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) return savedTheme;
+
         const prefersDark = window.matchMedia(
             "(prefers-color-scheme: dark)",
         ).matches;
-        setTheme(savedTheme ?? (prefersDark ? "dark" : "light"));
-    }, []);
+
+        return prefersDark ? "dark" : "light";
+    });
     useEffect(() => {
         localStorage.setItem("theme", theme);
         document.documentElement.classList.toggle("dark", theme === "dark");
